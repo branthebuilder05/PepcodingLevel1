@@ -1,0 +1,28 @@
+//any base to decimal
+import java.util.*;
+
+public class Main
+{
+    public static int res(int num,int base){
+        int res=0,temp,pow=1;
+        while(num>0){
+            temp=num%6;
+            num/=6;
+            res+= temp*pow;
+            pow*=10;
+            
+        }
+        
+        
+        return res;
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World, any base to decimal");
+		int num = 2354,base=6;
+		System.out.println(res(num,base));
+		
+		
+		
+		
+	}
+}
