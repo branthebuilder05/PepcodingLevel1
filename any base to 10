@@ -1,0 +1,19 @@
+//any base to 10
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int num=10110,base=2,temp,res=0,pow=1;
+		while(num>0){
+		    temp=num%10;
+		    num/=10;
+		    res+= temp*pow;
+		    pow*=base;
+		    
+		    
+		    
+		}
+		System.out.println(res);
+	}
+}
