@@ -1,0 +1,50 @@
+import java.util.*;
+
+
+public class Main
+{
+    public static int res(int num,int currentbase ,int intendedbase ){
+        
+        int res=0,temp;
+        
+        //to base 10 first
+        int pow=1;
+            while(num>0){
+                temp=num%10;
+                num/=10;
+                res+=temp*pow;
+                pow*=currentbase;
+            }
+            //System.out.println(res);
+        
+        // num is in base 10 now
+        //convert to intended base now
+       num=res;
+       res=0;
+       pow=1;
+        while(num>0){
+            temp = num%intendedbase;
+            num/=intendedbase;
+            res+= temp*pow;
+            pow*=10;
+ 
+        }
+            
+        
+        
+        
+        
+            
+        
+        return res;
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int num = 1273;
+		int currentbase=8, intendedbase=4;
+
+		System.out.println("The number "+ num+" in intendedbase "+intendedbase+" is "+ res( num, currentbase , intendedbase));
+		System.out.println("The number 22323 "+" in intendedbase "+intendedbase+" is "+ res( 22323, 4 , 8));
+		
+	}
+}
