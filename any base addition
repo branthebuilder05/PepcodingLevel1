@@ -1,0 +1,45 @@
+//any base addition
+
+public class Main
+{
+    
+    
+    public static int sum(int num1,int num2,int base){
+        int temp1,temp2,res=0,carry=0,restemp=0,pow=1;
+        while(num1>0 || num2>0){
+            temp1=num1%10;
+            temp2=num2%10;
+            num1/=10;
+            num2/=10;
+            
+            restemp=carry+temp1+temp2;
+            
+            if(restemp>=base){
+                carry=1;
+                restemp-=base;
+                res+=(restemp*pow);
+                pow*=10;
+            }
+            else{
+            carry=0;
+            res+=(restemp*pow);
+            pow*=10;
+            }
+        }
+        if(carry==1){
+            res+=(carry*pow);
+        }
+        
+            return res;
+        
+        
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		
+		int a=sum(346,777,8);
+			int b=sum(3443,51243,6);
+		System.out.println(b);
+		
+	}
+}
