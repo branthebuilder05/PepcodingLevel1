@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+public class Main
+{
+    public static StringBuilder res(int num,int currentbase ,int intendedbase ){
+        String result="";
+        int temp;
+        while(num>0){
+            temp = num%intendedbase;
+            num/=intendedbase;
+            // System.out.println(temp);
+             String a=String.valueOf(temp);
+             
+            result+=(a);
+        }
+         StringBuilder revresult = new StringBuilder();
+ 
+        // append a string into StringBuilder input1
+        revresult.append(result);
+ 
+        // reverse StringBuilder input1
+        revresult.reverse();
+        
+        return revresult;
+        
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int num = 57;
+		int currentbase=8, intendedbase=2;
+
+		System.out.println("The number "+ num+" in intendedbase "+intendedbase+" is "+ res( num, currentbase , intendedbase));
+		//
+	}
+}
