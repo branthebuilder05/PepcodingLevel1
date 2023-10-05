@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main
+{
+    public static int res(int num, int digit){
+        int count = 0,temp=99;
+        while(num!=0){
+            temp = num%10;
+            if(temp == digit){
+                count++;}
+            num/=10;
+            temp=99;
+                
+        }
+        return count;
+        
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int num = 345675865;
+		int digit = 5;
+		System.out.println("Result is "+ res(num,digit)) ;
+	}
+}
