@@ -1,0 +1,54 @@
+
+//substraction of two Array
+import java.util.*;
+
+public class Main
+{
+     public static int[] arrSub(int num1[], int num2[],int base){
+        int res[] = new int[8];
+        int i=num1.length-1,j=num2.length-1,k=res.length-1,temp=0,carry=0;
+        while(k>=0){
+            
+            if(i>=0){
+            temp+=carry;
+            temp+=num1[i];
+            carry=0;
+                
+            }
+            if(j>=0){
+                if(temp>=num2[j]){
+                    temp-=num2[j];
+                }
+                else{
+                    carry=-1;
+                    temp+=base;
+                    temp-=num2[j];
+                }
+            }
+            res[k]=temp;
+            temp=0;
+            i--;
+            j--;
+            k--;
+ 
+        }
+        
+        return res;
+    
+     }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		
+		int[] num1 = new int[]{1,2,3,4,0,4,1};
+		int[] num2 = new int[]{3,4,5,6,3,};
+		int [] res = new int[8];
+		//num1 = ;
+		//num2 = ;
+		int base= 8;
+		res= arrSub(num1,num2,base);
+		
+		for(int var:res)
+		    System.out.print(var);
+		//1177256
+	}
+}
