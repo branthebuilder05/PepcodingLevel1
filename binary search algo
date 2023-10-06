@@ -1,0 +1,32 @@
+
+public class Main
+{   public static int binsearch(int arr[],int ele){
+        int start=0,end=arr.length-1;
+        
+        while(start<=end){
+        int mid=start+(end-start)/2;
+        if(arr[mid]==ele)
+            return mid;
+        
+        if(arr[mid]>ele){ //left
+            start=start;
+            end=mid-1;
+        }
+        if(arr[mid]<ele){ //right
+            start=mid+1;
+            end=end;
+        }
+            
+        }
+        return -1;
+        
+}
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int arr[]=new int[]{1,2,3,4,5,6,7,8,9};
+		
+		int res = binsearch(arr,9);
+		System.out.println(res);
+	}
+}
+
