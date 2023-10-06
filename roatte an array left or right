@@ -1,0 +1,42 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+    
+    public static void rotate(int arr[],int start,int end){
+        int i=start,j=end;
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+        
+        
+        
+    }
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		
+		int n= -59;
+		int arr[] = new int[]{1,2,3,4,5,6,7,8};
+		
+		
+		n= n%arr.length;
+		if(n<0)
+		    n=arr.length+n;
+		    
+		rotate(arr,0,n-1);
+		rotate(arr,n,arr.length-1);
+		rotate(arr,0,arr.length-1);
+		    for(int ele:arr)
+		        System.out.print(ele+" ");
+	}
+}
