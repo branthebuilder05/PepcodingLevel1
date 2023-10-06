@@ -1,0 +1,33 @@
+
+public class Main
+{   public static void subset(int arr[]){
+        int limit= (int)Math.pow(2,arr.length);
+        int temp=0;
+        
+        for(int i=0;i<limit;i++){
+            temp=i;
+            String s1="";
+            for(int j=0;j<arr.length;j++){
+                int val=temp%2;
+                if(val ==1){
+                    s1=s1+arr[j];
+                }
+                else{
+                    s1=s1+"_";
+                    
+                }
+                temp/=2;
+            }
+            System.out.println(s1);
+            
+        }
+    
+    
+}
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int arr[]=new int[]{1,2,3};
+		
+		subset(arr);
+	}
+}
