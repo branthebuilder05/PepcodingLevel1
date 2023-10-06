@@ -1,0 +1,48 @@
+
+public class Main
+{  
+    public static void firstlast(int arr[], int index[],int ele){
+        int found=binsearch(arr,ele);
+        System.out.println(found);
+        int low=found,high=found;
+        while(arr[low]==arr[found])
+            low--;
+        
+        while(arr[high]==arr[found])
+            high++;
+        
+        index[0]=low+1;
+        index[1]=high-1;
+        
+    }
+    
+    public static int binsearch(int arr[],int ele){
+        int start=0,end=arr.length-1;
+        
+        while(start<=end){
+        int mid=start+(end-start)/2;
+        if(arr[mid]==ele)
+            return mid;
+        
+        if(arr[mid]>ele){ //left
+            start=start;
+            end=mid-1;
+        }
+        if(arr[mid]<ele){ //right
+            start=mid+1;
+            end=end;
+        }
+            
+        }
+        return -1;
+        
+}
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int arr[]=new int[]{1,1,2,2,2,2,4,5,6,7,7,9,11};
+		
+		int index[]=new int[2];
+		firstlast(arr,index,2);
+		System.out.println("low and high are "+ index[0]+" "+index[1]);
+	}
+}
